@@ -6,22 +6,22 @@ public class test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Nhập tên ");
+        System.out.println("Nhập tên: ");
         String username = scanner.nextLine();
-        System.out.println("Nhập email ");
+        System.out.println("Nhập email: ");
         String email = scanner.nextLine();
-        System.out.println("Nhập mật khẩu ");
+        System.out.println("Nhập pass: ");
         String password = scanner.nextLine();
 
         User user = new User(username,email,password);
 
-        System.out.println("Nhập mật khẩu ");
+        System.out.println("Nhập mật khẩu: ");
         String nhapMatKhau = scanner.nextLine();
 
         if(user.checkout(nhapMatKhau)){
-            System.out.println("Đăng nhập thành công");
+            System.out.println("Đăng nhập thành công:");
         }
         else
-            System.out.println("Đăng nhập thất bại");
+            System.out.println("Đăng nhập thất bại:");
     }
 }

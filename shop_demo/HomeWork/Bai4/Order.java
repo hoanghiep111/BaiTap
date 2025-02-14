@@ -70,7 +70,10 @@ public class Order {
         System.out.println("--ĐƠN HÀNG--");
         System.out.println("Mã đơn hàng: " + order_id );
         System.out.println("Khách hàng: " + user );
-        System.out.println("Danh sách sản phẩm: " + products );
+        System.out.println("Danh sách sản phẩm: " );
+        for (Product p : products) {
+            System.out.println("   " + p);
+        }
         System.out.println("Tổng giá: " + total_price );
         System.out.println("Trạng thái: " + status );
     }

@@ -57,7 +57,7 @@ public class test {
                     order.capNhatTrangThai("Đang xử lý");
                     break;
                 case 2:
-                    order.capNhatTrangThai("Đang giao hàng");
+                    order.capNhatTrangThai("Đã giao hàng");
                     break;
                 case 3:
                     order.capNhatTrangThai("Đã hủy");
