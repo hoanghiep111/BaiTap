@@ -11,7 +11,6 @@ public class CustomerManager {
     private HashSet<User> customer;
     private HashMap<String, Integer> customerPurchaseCount;
 
-
     public CustomerManager(){
         customer = new HashSet<>();
         customerPurchaseCount = new HashMap<>();
@@ -32,7 +31,15 @@ public class CustomerManager {
         }
         return false;
     }
-
+    public void display() {
+        for (User user : customer) {
+            System.out.println("ID: " + user.getId());
+            System.out.println("Tên: " + user.getUsername());
+            System.out.println("Email: " + user.getEmail());
+            System.out.println("Vai trò: " + user.getRole());
+            System.out.println("Quyền hạn: " + user.getPermissions());
+        }
+    }
 
     // Kiểm tra sản phẩm có trong danh sách yêu thích của khách hàng không
     public boolean isProductInFavorites(String userId, Product product) {

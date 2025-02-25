@@ -27,11 +27,16 @@ public class CartManager {
 
     // xóa sản phẩm trong giỏ hàng
     public void removeProdcut(String productId){
+        Product deleteProduct = null;
         for(int i=0; i< cartItems.size(); i++){
             if(cartItems.get(i).getId().equals(productId)){
-                cartItems.remove(i);
-                cart.remove(cartItems.get(i));
+                deleteProduct = cartItems.remove(i);
+                break;
             }
+        }
+        if (deleteProduct != null) {
+            cartItems.remove(deleteProduct);
+            cart.remove(deleteProduct);
         }
     }
 
@@ -58,7 +63,6 @@ public class CartManager {
             System.out.println("Sản phẩm đầu tiên: " + cartItems.getFirst());
         }
     }
-
 
     // lấy sản phẩm cuối cùng
     public void lastProduct(){

@@ -1,7 +1,6 @@
 package bu3_training.shop_demo.collection.manager.list;
 
 import bu3_training.shop_demo.collection.models.Product;
-import bu3_training.shop_demo.datatypes.qldanhsachbangArrayList.SinhVien;
 import org.hibernate.sql.ast.tree.expression.Collation;
 
 import java.util.*;
@@ -10,11 +9,14 @@ public class ProductManager {
     private ArrayList<Product> products;
     private HashSet<Product> productSet;
     private HashMap<String,Integer> productStock;
+    private TreeMap<Double, List<Product>> productsByPrice;
+
 
     public ProductManager(){
         products = new ArrayList<>();
         productSet = new HashSet<>();
         productStock = new HashMap<>();
+        productsByPrice = new TreeMap<>();
 
     }
 
@@ -28,6 +30,18 @@ public class ProductManager {
         productSet.add(product); // Thêm vào HashSet để đảm bảo không trùng
         products.add(product);
         productStock.put(productId, product.getStock()); // Lưu số lượng vào HashMap
+
+        //  Sắp xếp sản phẩm theo giá bằng TreeMap
+        if (!productsByPrice.containsKey(product.getPrice())) {
+            System.out.println("Giá " + product.getPrice() + " chưa có");
+            productsByPrice.put(product.getPrice(), new ArrayList<>());
+        } else {
+            System.out.println("Giá " + product.getPrice() + " đã tồn tại");
+        }
+        productsByPrice.get(product.getPrice()).add(product);
+        System.out.println("Thêm sản phẩm: " + product.getName() + " vào danh sách có giá " + product.getPrice());
+
+
     }
 
     // phương thức xóa sản phẩm
@@ -91,7 +105,7 @@ public class ProductManager {
         System.out.println("Sản phẩm " + hightProduct.getName() + "  có giá cao nhất " + hightProduct.getPrice());
     }
 
-    // phương thức lọc sản phẩm theo loại
+    // lọc sản phẩm theo danh mục
     public ArrayList<Product> filteredProductsByCategory(String category) {
         ArrayList<Product> filteredProducts = new ArrayList<>();
         for(int i =0; i< products.size(); i++){
@@ -117,6 +131,7 @@ public class ProductManager {
                     return -1;
             }
         });
+        displayList();
     }
 
     // Tất cả danh mục sản phẩm

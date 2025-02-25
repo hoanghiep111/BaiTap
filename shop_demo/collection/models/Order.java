@@ -1,18 +1,16 @@
 package bu3_training.shop_demo.collection.models;
 
-import bu3_training.shop_demo.homework.Bai4.Product;
-
 import java.util.List;
 import java.util.Objects;
 
 public class Order {
     private int orderId;
     private String user;
-    private List<bu3_training.shop_demo.homework.Bai4.Product> products;
+    private List<bu3_training.shop_demo.collection.models.Product> products;
     private double totalPrice;
     private String status;
 
-    public Order(int orderId, String user, List<bu3_training.shop_demo.homework.Bai4.Product> products, double totalPrice) {
+    public Order(int orderId, String user, List<bu3_training.shop_demo.collection.models.Product> products, double totalPrice) {
         this.orderId = orderId;
         this.user = user;
         this.products = products;
@@ -36,7 +34,7 @@ public class Order {
         this.user = user;
     }
 
-    public List<bu3_training.shop_demo.homework.Bai4.Product> getProducts() {
+    public List<bu3_training.shop_demo.collection.models.Product> getProducts() {
         return products;
     }
 

@@ -16,7 +16,7 @@ public class OrderManager {
     public void completeOrder(Order order){
         if(order.getStatus().equals("Đã giao hàng")){
             completedOrders.add(order);
-            System.out.println("Đơn hàng "+ order.getOrderId()+"đã hoàn thành giao hàng được thêm vào danh sách hoàn thành");
+            System.out.println("Đơn hàng "+ order.getOrderId()+"đã hoàn thành giao hàng");
         }
         else {
             System.out.println("Đơn hàng "+ order.getOrderId()+ "chưa được giao");

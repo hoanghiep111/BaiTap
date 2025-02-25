@@ -21,7 +21,7 @@ public class User {
         this.password = password;
         this.role = role;
         this.permissions = permissions;
-        this.favoriteProducts = favoriteProducts;
+        this.favoriteProducts = new HashSet<>();
     }
 
     public String getId() {
