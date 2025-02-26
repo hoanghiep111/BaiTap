@@ -117,6 +117,9 @@ public class test {
         // thống kê đơn mua hàng
         customerManager.recordPurchase("U001");
         System.out.println("Đơn mua");
-         customerManager.displayPurchase();
+        customerManager.displayPurchase();
+
+
+
     }
 }
