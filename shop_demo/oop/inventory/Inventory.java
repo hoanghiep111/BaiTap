@@ -27,17 +27,23 @@ public class Inventory {
         productList.put(product.getId(), product);
     }
 
-    public void resTock(String productId,String productName, int quantity ){
+    public void resTock(String productId, String productName, int quantity, double price, String category) {
         Product product = productList.get(productId);
         if (product != null) {
-            product.setStock(product.getStock()+ quantity);
+            product.setStock(product.getStock() + quantity);
             System.out.println("Đã thêm " + quantity + " sản phẩm " + product.getName() + ". Tổng tồn kho: " + product.getStock());
         } else {
-            product = new Product(productId,productName , quantity);
+            product = new Product(productId, productName, price, category, quantity) {
+                @Override
+                public void hienThiThongTin() {
+                    System.out.println("Sản phẩm: " + getName() + ", Giá: " + getPrice() + ", Loại: " + getCategory() + ", Số lượng: " + getStock());
+                }
+            };
             productList.put(productId, product);
             System.out.println("Sản phẩm mới đã thêm vào kho: " + product.getName() + " với số lượng: " + quantity);
         }
     }
+
 
     public void deductStock(String productId, int quantity) {
         Product product = productList.get(productId);
