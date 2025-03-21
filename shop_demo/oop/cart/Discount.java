@@ -1,10 +1,9 @@
 package bu3_training.shop_demo.oop.cart;
 
-import bu3_training.shop_demo.homework.Bai8.Cart;
-import bu3_training.shop_demo.homework.Bai8.Productt;
+import bu3_training.shop_demo.oop.product.Product;
 
 public class Discount {
-    public void applyDiscount(Productt product, double percentage){
+    public void applyDiscount(Product product, double percentage){
         if (percentage < 0 || percentage > 100) {
             System.out.println("Phần trăm giảm giá không hợp lệ!");
             return;
@@ -17,7 +16,7 @@ public class Discount {
     public double appBulkDiscount(Cart cart){
         int toiDa = 100;
         int phanTram = 10;
-        double total = cart.total_price();
+        double total = cart.getTotalPrice();
 
         if (total > toiDa) {
             return total * (1 - phanTram / 100);

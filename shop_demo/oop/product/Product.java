@@ -1,16 +1,26 @@
 package bu3_training.shop_demo.oop.product;
 
 public abstract class Product {
+    private String id;
     private String name;
     private double price ;
     private String category ;
     private int stock;
 
-    public Product(String name, double price, String category, int stock) {
+    public Product(String id, String name, double price, String category, int stock) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.category = category;
         this.stock = stock;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -45,14 +55,6 @@ public abstract class Product {
         this.stock = stock;
     }
 
-//    public void hienThiThongTin() {
-//        System.out.println("Thông tin sản phẩm");
-//        System.out.println("Tên sản phẩm: " + name);
-//        System.out.println("Gía sản phẩm: " + price);
-//        System.out.println("Loại sản phẩm: " + category);
-//        System.out.println("Số lượng sản phẩm: " + stock);
-//
-//    }
     public abstract void hienThiThongTin();
 
     }

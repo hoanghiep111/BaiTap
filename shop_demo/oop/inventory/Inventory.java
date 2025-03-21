@@ -1,6 +1,8 @@
 package bu3_training.shop_demo.oop.inventory;
 
-import bu3_training.shop_demo.homework.Bai9.Product;
+
+
+import bu3_training.shop_demo.oop.product.Product;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,7 @@
 package bu3_training.shop_demo.oop.cart;
 
-import bu3_training.shop_demo.homework.Bai3.Product;
+
+import bu3_training.shop_demo.oop.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;

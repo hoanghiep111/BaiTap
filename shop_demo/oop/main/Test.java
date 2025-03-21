@@ -29,8 +29,8 @@ public class Test {
         // Tạo danh sách sản phẩm
         List<Product> productList = new ArrayList<>();
 
-        productList.add(new Electronics("Laptop Dell XPS", 1500.00, "Electronics", 10, "Dell", 24));
-        productList.add(new Clothing("Quần jean nam", 40.00, "Clothing", 30, "L", "Vai cotton"));
+        productList.add(new Electronics("1","Laptop Dell XPS", 1500.00, "Electronics", 10, "Dell", 24));
+        productList.add(new Clothing("2","Quần jean nam", 40.00, "Clothing", 30, "L", "Vai cotton"));
 
         System.out.println("Danh sách sản phẩm:");
         for (Product product : productList) {
